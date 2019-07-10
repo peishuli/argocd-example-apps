@@ -29,3 +29,14 @@ argocd app create kustomized-helm \
     --dest-server https://kubernetes.default.svc \
     --dest-namespace default
 ```
+*_note_*: From Alex Collins' response on Slack:
+"it's probably worth noting that in v1.2 you can use environment variables that are set in your app, and passed to your tool":
+```
+# plugin specific config
+    plugin:
+      name: mypluginname
+      # environment variables passed to the plugin
+      env:
+        - name: FOO
+          value: bar
+```
